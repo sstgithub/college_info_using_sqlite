@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-set :database, "sqlite3:///university_info.db"
+set :database, "sqlite3:///sql_hw.db"
 
 class Professor < ActiveRecord::Base
 end

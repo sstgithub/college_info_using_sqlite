@@ -1,4 +1,3 @@
-
 #Find all professors who teach computer science
 select professors.name from professors 
 inner join courses on professors.id = courses.professor_id 

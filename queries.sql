@@ -13,8 +13,6 @@ inner join courses on subjects.id = courses.subject_id
 select subjects.name, courses.level from subjects
 inner join courses on subjects.id = courses.subject_id
 where courses.start_date > date('2015-03-31') AND courses.start_date < date('2015-12-01')
-#sqlite doesnt tell you when stuff doesnt work?!?!?
-#Beware of DOUBLE vs SINGLE quotation marks!!
 
 
 #Find all subjects that begin with the letter "R"

@@ -1,5 +1,7 @@
-<form action="/professors" method="post">
-		<input type="text" id="p_name" name="p[name]" value="<%= @new_p.name %>">
-		<input type="text" id="p_years_exp" name="p[years_exp]" value="<%= @new_p.years_exp %>">
+<!-- posting directly to subjects site instead of editing a specific subject so it posts directly to page -->
+
+<form action="/subjects" method="post"> 
+		<input type="text" id="s_name" name="s[name]" value="<%= @new_s.name %>">
+		<input type="text" id="s_description" name="s[department]" value="<%= @new_s.department %>">
 		<input type="submit">
 	</form>

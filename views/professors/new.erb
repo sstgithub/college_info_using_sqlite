@@ -1,0 +1,6 @@
+<form action="/professors" method="post">
+<!-- 		<input type="hidden" name="_method" value="post" /> THIS IS IMPLIED BECAUSE THE METHOD IS ALSO CALLED POST IN SINATRA -->
+		<input type="text" id="p_name" name="p[name]" value="<%= @new_p.name %>">
+		<input type="text" id="p_years_exp" name="p[years_exp]" value="<%= @new_p.years_exp %>">
+		<input type="submit">
+	</form>

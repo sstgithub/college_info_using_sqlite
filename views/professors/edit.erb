@@ -1,0 +1,6 @@
+<form action="/professors/<%= @p.id %>" method="post">
+	<input type="hidden" name="_method" value="put" />
+	<input type="text" id="p_name" name="p[name]" value="<%= @p.name %>">
+	<input type="text" id="p_years_exp" name="p[years_exp]" value="<%= @p.years_exp %>">
+	<input type="submit">
+</form>

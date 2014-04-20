@@ -1,0 +1,6 @@
+<form action="/subjects/<%= @s.id %>" method="post">
+	<input type="hidden" name="_method" value="put" />
+	<input type="text" id="s_name" name="s[name]" value="<%= @s.name %>">
+	<input type="text" id="s_department" name="s[department]" value="<%= @s.department %>">
+	<input type="submit">
+</form>

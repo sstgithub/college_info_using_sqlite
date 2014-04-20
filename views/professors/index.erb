@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>List of all professors, subjects, and courses</title>
+	<link rel="stylesheet" type="text/css" href="/application.css">
+</head>
+<body>
+
+<div class = "top-bar"></div>
+
+<div class = "black-bar"><font class = "new-h1">
+List of all professors, subjects, and courses
+</font></div>
+
+<div id="blue_box">
+
+<!-- <div id="left"> -->
+
+<ul>
+	<% @professors.each do |p| %>
+	<li><%= p.name %>
+		<%= p.years_exp %>
+	<a href = "/professors/<%= p.id %>">DELETE?</a>
+	<a href = "/professors/<%= p.id %>/edit">EDIT?</a>
+	<a href = "/professors/<%= p.id %>/new">ADD?</a>
+	</li>
+
+	<% end %>
+</ul>
+
+<!-- </div>
+
+
+<div class="divider"></div>
+
+
+<div id="right">
+<form action = "/new" method="post">
+	<input type = "text" id="description" name="description" class = "input-text"><p></p>
+	<input type = "submit" class = "second-button margins">
+</form>
+</div> -->
+</div>
+
+
+
+</body>
+</html>

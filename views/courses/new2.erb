@@ -1,0 +1,44 @@
+new.erb getting dropdown form to work:
+
+	<!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<div class = "btn-group">
+<select class="btn-primary form-control">
+            <option>---</option>
+            <option>Bogota</option>
+            <option>Cali</option>
+          </select>
+
+</div>
+
+
+
+
+
+<select class="form-control">
+  <% @courses.each do |test| %>
+  <% @professors.each do |test2| %>
+    <option value="<%= test.professor_id %>"><%= test.professor_id %></option>
+  <% end %>
+  <% end %>
+</select>
+
+
+
+<select class="btn-default form-control" name="c[professor_id]">
+      <% @professors.each do |test2| %>
+      <option value="<%= @professors.id %>"><%= test2.name %></option>
+      <% end %>
+    </select>

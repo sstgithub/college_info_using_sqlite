@@ -17,10 +17,15 @@ get "/subjects/index" do
 	erb :"subjects/index"
 end
 
+get "/courses/index" do 
+	@courses = Course.all
+	erb :"courses/index"
+end
+
 #shows page to set up creating a single member from a collection 
 # (with dropdown menus and everything)
 
-get "/professors/:id/new" do
+get "/professors/new" do
 	@p = Professor.new
 	@new_p = Professor.new
 	erb :"professors/new"
@@ -30,6 +35,14 @@ get "/subjects/new" do
 	@s = Subject.new
 	@new_s = Subject.new
 	erb :"subjects/new"
+end
+
+get "/courses/new" do
+	@courses = Course.all
+	@professors = Professor.all
+	@c = Course.new
+	@new_c = Course.new
+	erb :"courses/new"
 end
 
 #shows static single member to confirm delete
@@ -44,6 +57,11 @@ get "/subjects/:id" do
 	erb :"subjects/show"
 end
 
+get "/courses/:id" do
+	@c = Course.find(params[:id])
+	erb :"courses/show"
+end
+
 # shows page to edit single member
 
 get "/professors/:id/edit" do
@@ -54,6 +72,11 @@ end
 get "/subjects/:id/edit" do
 	@s = Subject.find(params[:id])
 	erb :"subjects/edit"
+end
+
+get "/courses/:id/edit" do
+	@c = Course.find(params[:id])
+	erb :"courses/edit"
 end
 
 
@@ -88,6 +111,15 @@ delete "/subjects/:id" do
 	end
 end
 
+delete "/courses/:id" do 
+	@c = Course.find(params[:id])
+	if @c.delete
+		redirect "/courses/index"
+	else
+		redirect "/error"
+	end
+end
+
 #defines what put action (update action) does
 
 put "/professors/:id" do
@@ -100,6 +132,12 @@ put "/subjects/:id" do
 	@s = Subject.find(params[:id])
 	@s.update_attributes(params[:s]) 
 	redirect "/subjects/index"
+end
+
+put "/courses/:id" do
+	@c = Course.find(params[:id])
+	@c.update_attributes(params[:c]) 
+	redirect "/courses/index"
 end
 
 #defines what post action (adding new member to collection) does 
@@ -117,6 +155,11 @@ post "/subjects" do
 	redirect "/subjects/index"
 end
 
+post "/courses" do
+	@c = Course.new(params[:c])
+	@c.save
+	redirect "/courses/index"
+end
 
 
 class Professor < ActiveRecord::Base

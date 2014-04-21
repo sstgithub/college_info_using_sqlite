@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>List of all professors, subjects, and courses</title>
+	<title>List of all professors and how long they have been teaching</title>
 	<link rel="stylesheet" type="text/css" href="/application.css">
 </head>
 <body>
@@ -8,7 +8,7 @@
 <div class = "top-bar"></div>
 
 <div class = "black-bar"><font class = "new-h1">
-List of all professors, subjects, and courses
+List of all professors and how long they have been teaching
 </font></div>
 
 <div id="blue_box">
@@ -17,11 +17,11 @@ List of all professors, subjects, and courses
 
 <ul>
 	<% @professors.each do |p| %>
-	<li><%= p.name %>
-		<%= p.years_exp %>
+	<li><%= p.name %> 
+		<%= p.years_exp %> years
 	<a href = "/professors/<%= p.id %>">DELETE?</a>
 	<a href = "/professors/<%= p.id %>/edit">EDIT?</a>
-	<a href = "/professors/<%= p.id %>/new">ADD?</a>
+	<a href = "/professors/new">ADD?</a>
 	</li>
 
 	<% end %>

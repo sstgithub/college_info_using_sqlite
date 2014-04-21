@@ -7,6 +7,7 @@ where subjects.department = "Computer Science";
 #Find all courses starting in January
 select * from subjects
 inner join courses on subjects.id = courses.subject_id
+where courses.start_date LIKE "20%%-01-%%"
  
 
 #Find all courses starting after March but before December

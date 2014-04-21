@@ -1,0 +1,10 @@
+<ul>
+	<% @courses.each do |c| %>
+	<li><%= c.level %>
+			<%= c.start_date %>
+	<a href = "/courses/<%= c.id %>">DELETE?</a>
+	<a href = "/courses/<%= c.id %>/edit">EDIT?</a>
+	<a href = "/courses/new">ADD?</a>
+	</li>
+	<% end %>
+</ul>

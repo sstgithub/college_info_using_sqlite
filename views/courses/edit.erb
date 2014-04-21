@@ -1,0 +1,6 @@
+<form action="/courses/<%= @c.id %>" method="post">
+	<input type="hidden" name="_method" value="put" />
+	<input type="text" id="c_level" name="c[level]" value="<%= @c.level %>">
+	<input type="text" id="c_start_date" name="c[start_date]" value="<%= @c.start_date %>">
+	<input type="submit">
+</form>

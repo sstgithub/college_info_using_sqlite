@@ -18,6 +18,7 @@ get "/subjects/index" do
 end
 
 get "/courses/index" do 
+	@professors = Professor.all
 	@courses = Course.all
 	erb :"courses/index"
 end
@@ -87,7 +88,11 @@ get "/error" do
 	erb :"/error"
 end
 
+#shows home page
 
+get "/home" do
+	erb :"/home"
+end
 
 
 

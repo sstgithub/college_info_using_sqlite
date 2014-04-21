@@ -17,7 +17,9 @@ List of all professors and how long they have been teaching
 
 <ul>
 	<% @professors.each do |p| %>
-	<li><%= p.name %> 
+	<li>
+		<%= p.id %>
+		<%= p.name %> 
 		<%= p.years_exp %> years
 	<a href = "/professors/<%= p.id %>">DELETE?</a>
 	<a href = "/professors/<%= p.id %>/edit">EDIT?</a>

@@ -1,10 +1,17 @@
 <ul>
 	<% @courses.each do |c| %>
+	<% a = c.professor_id %>
 	<li><%= c.level %>
 			<%= c.start_date %>
+			
+			<%= c.professor_id %>
+
+			<%= c.subject_id %>
+			
 	<a href = "/courses/<%= c.id %>">DELETE?</a>
 	<a href = "/courses/<%= c.id %>/edit">EDIT?</a>
 	<a href = "/courses/new">ADD?</a>
 	</li>
 	<% end %>
 </ul>
+

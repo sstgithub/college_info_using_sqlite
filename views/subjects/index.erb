@@ -1,7 +1,9 @@
 <ul>
 	<% @subjects.each do |s| %>
-	<li><%= s.name %>
-			<%= s.department %>
+	<li>
+		<%= s.id %>
+		<%= s.name %>
+		<%= s.department %>
 	<a href = "/subjects/<%= s.id %>">DELETE?</a>
 	<a href = "/subjects/<%= s.id %>/edit">EDIT?</a>
 	<a href = "/subjects/new">ADD?</a>

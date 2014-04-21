@@ -4,6 +4,7 @@
 <!-- Bootstrap css files -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/datepicker.css" rel="stylesheet">
 
 	<title></title>
 </head>
@@ -12,18 +13,18 @@
 
 <form action="/courses" method="post"> 
 		<input type="text" id="c_level" name="c[level]" placeholder="Course level (###)" value="<%= @new_c.level %>">
-		<input type="text" id="c_start_date" name="c[start_date]" value="<%= @new_c.start_date %>">
-		<input type="text" id="c_professor_id" name="c[professor_id]" value="<%= @new_c.subject_id %>">
-		<input type="text" id="c_subject_id" name="c[subject_id]" value="<%= @new_c.subject_id %>"> 
+		<input type="text" class="datepicker" id="c_start_date" name="c[start_date]" placeholder="start-date (YEAR-MONTH-DAY)" value="<%= @new_c.start_date %>">
+		<input type="text" id="c_professor_id" name="c[professor_id]" placeholder="Professor ID" value="<%= @new_c.subject_id %>">
+		<input type="text" id="c_subject_id" name="c[subject_id]" placeholder="Subject ID" value="<%= @new_c.subject_id %>"> 
 		<input type="submit">
 </form>
 
 
 
 <!-- Bootstrap javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap-datepicker.js">$('.datepicker').datepicker()</script>
 </body>
 </html> 
 
